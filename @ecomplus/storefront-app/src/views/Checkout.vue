@@ -1,6 +1,6 @@
 <template>
   <div id="checkout">
-    <ec-checkout
+    <the-checkout
       :amount="amount"
       :checkoutStep.sync="checkoutStep"
       @login="login"
@@ -10,6 +10,7 @@
       :shippingService.sync="shippingService"
       :paymentGateway.sync="paymentGateway"
       :discountCoupon.sync="discountCoupon"
+      :base-modules-request-data="baseModulesRequestData"
       @setDiscountRule="setDiscountRule"
       @checkout="checkout"
     />

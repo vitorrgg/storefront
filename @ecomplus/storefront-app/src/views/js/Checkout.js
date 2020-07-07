@@ -1,16 +1,20 @@
-import { i19paymentError, i19paymentErrorMsg } from '@ecomplus/i18n'
+import {
+  i19paymentError,
+  i19paymentErrorMsg
+} from '@ecomplus/i18n'
 import { i18n } from '@ecomplus/utils'
 import ecomCart from '@ecomplus/shopping-cart'
 import ecomPassport from '@ecomplus/passport-client'
 import { mapGetters, mapMutations, mapActions } from 'vuex'
 import { upsertCart } from './../../lib/sync-cart-to-api'
-import EcCheckout from './../../components/EcCheckout.vue'
+import baseModulesRequestData from './../../lib/base-modules-request-data'
+import TheCheckout from '#components/TheCheckout.vue'
 
 export default {
   name: 'checkout',
 
   components: {
-    EcCheckout
+    TheCheckout
   },
 
   data () {
@@ -22,6 +26,7 @@ export default {
   },
 
   computed: {
+    baseModulesRequestData: () => baseModulesRequestData,
     ...mapGetters([
       'amount',
       'shippingService',
